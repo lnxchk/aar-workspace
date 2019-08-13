@@ -1,0 +1,36 @@
+{
+  "name": "aar-mysql",
+  "description": "Installs/Configures aar-mysql",
+  "long_description": "Installs/Configures aar-mysql",
+  "maintainer": "The Authors",
+  "maintainer_email": "you@example.com",
+  "license": "All Rights Reserved",
+  "platforms": {
+
+  },
+  "dependencies": {
+    "yum-mysql-community": ">= 0.0.0",
+    "mysql": ">= 0.0.0"
+  },
+  "providing": {
+    "aar-mysql": ">= 0.0.0"
+  },
+  "recipes": {
+    "aar-mysql": ""
+  },
+  "version": "0.1.2",
+  "source_url": "",
+  "issues_url": "",
+  "privacy": false,
+  "chef_versions": [
+    [
+      ">= 14.0"
+    ]
+  ],
+  "ohai_versions": [
+
+  ],
+  "gems": [
+
+  ]
+}

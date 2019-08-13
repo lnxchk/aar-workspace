@@ -1,0 +1,94 @@
+{
+  "revision_id": "c7c45a220c315059ebbb74b1546a447437793960cb1140fd92ef0c6b06843c81",
+  "name": "aar-mysql",
+  "run_list": [
+    "recipe[aar-mysql::default]"
+  ],
+  "included_policy_locks": [
+
+  ],
+  "cookbook_locks": {
+    "aar-mysql": {
+      "version": "0.1.2",
+      "identifier": "862f13c65ca1c6159e1e5b9c2361e24849815680",
+      "dotted_decimal_identifier": "37769408858071494.6084827734090593.248800098735744",
+      "source": ".",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": null,
+        "revision": "7e5b7c8a483d905fe7a616f89011615a12c25db2",
+        "working_tree_clean": false,
+        "published": false,
+        "synchronized_remote_branches": [
+
+        ]
+      },
+      "source_options": {
+        "path": "."
+      }
+    },
+    "mysql": {
+      "version": "8.5.1",
+      "identifier": "d4e0746684ec21ce1a36738cc3357a2cddc59e19",
+      "dotted_decimal_identifier": "59919485603474465.58012666371556149.134333117865497",
+      "cache_key": "mysql-8.5.1-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/mysql/versions/8.5.1/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/mysql/versions/8.5.1/download",
+        "version": "8.5.1"
+      }
+    },
+    "yum-mysql-community": {
+      "version": "4.0.1",
+      "identifier": "73fb41075ad98d9f733560758f3dc81b4358254b",
+      "dotted_decimal_identifier": "32645879036565901.44881194385772349.220019419522379",
+      "cache_key": "yum-mysql-community-4.0.1-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/yum-mysql-community/versions/4.0.1/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/yum-mysql-community/versions/4.0.1/download",
+        "version": "4.0.1"
+      }
+    }
+  },
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+
+  },
+  "solution_dependencies": {
+    "Policyfile": [
+      [
+        "aar-mysql",
+        ">= 0.0.0"
+      ],
+      [
+        "mysql",
+        "= 8.5.1"
+      ],
+      [
+        "yum-mysql-community",
+        "= 4.0.1"
+      ]
+    ],
+    "dependencies": {
+      "aar-mysql (0.1.2)": [
+        [
+          "yum-mysql-community",
+          ">= 0.0.0"
+        ],
+        [
+          "mysql",
+          ">= 0.0.0"
+        ]
+      ],
+      "mysql (8.5.1)": [
+
+      ],
+      "yum-mysql-community (4.0.1)": [
+
+      ]
+    }
+  }
+}
