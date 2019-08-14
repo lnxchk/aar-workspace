@@ -13,12 +13,12 @@ end
 mysql_service 'AAR_DB' do
   port '3306'
   version '5.6'
-  initial_root_password node.default['aar_mysql']['bdpasswd']
+  initial_root_password node.default['aar_mysql']['db_root']
   action [:create, :start]
 end
 
 link '/var/run/mysqld/mysqld.sock' do
-  to '/var/run/mysql-default/mysqld.sock'
+  to '/var/run/mysql-AAR_DB/mysqld.sock'
 end
 
 # install the AAR schema
@@ -27,8 +27,15 @@ cookbook_file "/tmp/AAR_db.sql" do
   action :create
 end
 
-execute "cratedb" do
-  command "mysql -u root --socket=/var/run/mysql-AAR_DB/mysqld.sock -ptillylacto < \"/tmp/AAR_db.sql\""
-  # not_if {::File.exists?("AARdb")}  how to chk DB exists????
+execute "createdb" do
+  command "mysql -u root --socket=#{node['aar_mysql']['db_sock']} -p#{node['aar_mysql']['db_root']} < \"/tmp/AAR_db.sql\""
+  not_if {::File.exists?("/var/lib/mysql-AAR_DB/AARdb/")} 
   action :run
 end
+
+execute "create aar user" do
+  command "mysql -u root --socket=#{node['aar_mysql']['db_sock']} -p#{node['aar_mysql']['db_root']} -e \"GRANT CREATE,INSERT,DELETE,UPDATE,SELECT on AARdb.* to 'aarapp'@'localhost' IDENTIFIED BY '#{node['aar_mysql']['db_pw']}'\""
+  action :run
+end
+
+

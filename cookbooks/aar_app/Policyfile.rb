@@ -4,21 +4,21 @@
 # https://docs.chef.io/policyfile.html
 
 # A name that describes what the system you're building with Chef does.
-name 'aar_mysql'
+name 'aar_app'
 
 # Where to find external cookbooks:
 default_source :supermarket
 
 # run_list: chef-client will run these recipes in the order specified.
-run_list 'yum-mysql-community::mysql56','aar_mysql::default'
+run_list 'aar_app::default'
 
 # Specify a custom source for a single cookbook:
-cookbook 'aar_mysql', path: '.'
+cookbook 'aar_app', path: '.'
 
-
-default['aar_mysql']['db_sock'] = '/var/run/mysql-AAR_DB/mysqld.sock'
-default['aar_mysql']['db_name'] = 'AARdb'
-default['aar_mysql']['db_user'] = "aarapp"
-default['aar_mysql']['db_pw'] = "trystatone"
-default['aar_mysql']['db_root'] = 'tillylacto'
+default['aar_app']['db_host'] = '127.0.0.1'
+default['aar_app']['db_port'] = '3306'
+default['aar_app']['db_name'] = 'AAR_DB'
+default['aar_app']['db_user'] = "aarapp"
+default['aar_app']['db_pw'] = "trystatone"
+default['aar_app']['db_root'] = "tillylacto"
 
