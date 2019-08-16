@@ -1,0 +1,6 @@
+default['aar_app']['logdir'] = "/var/log/httpd"
+default['aar_app']['www_user'] = "apache"
+default['aar_app']['www_group'] = "apache"
+default['aar_app']['db_pw'] = "trystatone"
+default['aar_app']['secretkey'] = "abcdefghijkl"
+default['aar_app']['db_sock'] = "/var/run/mysql-AAR_DB/mysqld.sock"

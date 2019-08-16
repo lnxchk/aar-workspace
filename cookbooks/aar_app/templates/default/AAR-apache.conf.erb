@@ -1,0 +1,14 @@
+ <VirtualHost *:80>
+ ServerName /
+ WSGIDaemonProcess /AAR user=<%= @user %> group=<%= @group %> threads=5
+ WSGIProcessGroup /AAR
+ WSGIScriptAlias / /var/www/AAR/awesomeapp.wsgi
+
+ <Directory /var/www/AAR>
+   WSGIApplicationGroup %{GLOBAL}
+   WSGIScriptReloading On
+   Require all granted
+ </Directory>
+ CustomLog <%= @logdir %>/access.log combined
+ ServerAdmin ops@example.com
+</VirtualHost>
