@@ -40,7 +40,7 @@ apache2_module 'wsgi'
 
 # pull down the code, put it in the dir
 remote_file "/tmp/AAR-master.zip" do
-  source "https://github.com/colincam/Awesome-Appliance-Repair/archive/master.zip"
+  source "https://github.com/lnxchk/Awesome-Appliance-Repair/archive/master.zip"
 end
 
 execute "unzip" do
