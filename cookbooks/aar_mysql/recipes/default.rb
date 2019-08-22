@@ -9,6 +9,10 @@ selinux_state "SELinux Disabled" do
   action :disabled
 end
 
+execute 'selinux off' do
+  command 'setenforce 0'
+end
+
 # install the database service
 mysql_service 'AAR_DB' do
   port '3306'
