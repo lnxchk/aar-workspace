@@ -39,7 +39,7 @@ end
 
 execute "create aar user" do
   command "mysql -u root --socket=#{node['aar_mysql']['db_sock']} -p#{node['aar_mysql']['db_root']} -e \"GRANT CREATE,INSERT,DELETE,UPDATE,SELECT on AARdb.* to 'aarapp'@'localhost' IDENTIFIED BY '#{node['aar_mysql']['db_pw']}'\""
-  not_if "mysql -u root -p#{node['aar_mysql']['db_root']} --socket=#{node['aar_mysql']['db_sock']} -e \"select * from mysql.user where user='aarapp'\""
+  not_if "mysql -u root -p#{node['aar_mysql']['db_root']} --socket=#{node['aar_mysql']['db_sock']} -e \"select * from mysql.user where user='aarapp'\" | grep aarapp"
   action :run
 end
 
