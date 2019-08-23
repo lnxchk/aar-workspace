@@ -17,6 +17,7 @@ end
 mysql_service 'AAR_DB' do
   port '3306'
   version '5.6'
+  bind_address #{node['ipaddress']}
   initial_root_password node.default['aar_mysql']['db_root']
   action [:create, :start]
 end
