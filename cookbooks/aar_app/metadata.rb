@@ -4,7 +4,7 @@ maintainer_email 'you@example.com'
 license 'All Rights Reserved'
 description 'Installs/Configures aar_app'
 long_description 'Installs/Configures aar_app'
-version '0.2.18'
+version '0.2.19'
 chef_version '>= 14.0'
 
 depends 'mysql'
