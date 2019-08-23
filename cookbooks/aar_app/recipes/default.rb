@@ -78,7 +78,8 @@ execute "enable" do
 end
 # set up the app 
 template "/var/www/AAR/AAR_config.py" do
-	source "AAR_config.py.erb"
+  source "AAR_config.py.erb"
+  notifies :reload, "service[apache2]"
 end
 
 # centos and rhel lock down the run dirs and that breaks wsgi
