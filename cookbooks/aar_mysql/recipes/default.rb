@@ -26,6 +26,10 @@ link '/var/run/mysqld/mysqld.sock' do
   to '/var/run/mysql-AAR_DB/mysqld.sock'
 end
 
+link '/var/lib/mysql/mysql.sock' do
+  to '/var/run/mysql-AAR_DB/mysqld.sock'
+end
+
 # install the AAR schema
 cookbook_file "/tmp/AAR_db.sql" do
   source "AAR_db.sql"
