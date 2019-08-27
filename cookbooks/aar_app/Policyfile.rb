@@ -16,7 +16,7 @@ run_list 'aar_app::default'
 cookbook 'aar_app', path: '.'
 
 default['aar_app']['db_host'] = '127.0.0.1'
-default['aar_app']['db_port'] = '3306'
+default['aar_app']['db_port'] = 3306
 default['aar_app']['db_name'] = 'AAR_DB'
 default['aar_app']['db_user'] = "aarapp"
 default['aar_app']['db_pw'] = "trystatone"
