@@ -80,6 +80,10 @@ end
 template "/var/www/AAR/AAR_config.py" do
   source "AAR_config.py.erb"
   notifies :reload, "service[apache2]"
+  variables(
+    :host => node[Chef::Config.policy_group]['aar_app']['db_host'],
+    :pw => node['aar_app']['db_pw']
+  )
 end
 
 # centos and rhel lock down the run dirs and that breaks wsgi
