@@ -1,0 +1,73 @@
+{
+  "revision_id": "d5de5dfa4ec500618edeff9e717b1df249e5154d8da2b85ecb47c2aa488415cc",
+  "name": "base",
+  "run_list": [
+    "recipe[os-hardening::default]",
+    "recipe[base::default]"
+  ],
+  "included_policy_locks": [
+
+  ],
+  "cookbook_locks": {
+    "base": {
+      "version": "0.1.0",
+      "identifier": "86b7f8a1eb282e91949c94191fa466b397861e0f",
+      "dotted_decimal_identifier": "37919925375543342.40977271843528612.112921527328271",
+      "source": ".",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": null,
+        "revision": "cad5609210d7c189caff12319fcc0abb937003d8",
+        "working_tree_clean": false,
+        "published": false,
+        "synchronized_remote_branches": [
+
+        ]
+      },
+      "source_options": {
+        "path": "."
+      }
+    },
+    "os-hardening": {
+      "version": "4.0.0",
+      "identifier": "e20b98be94004b4013698889ce3ce232f88fbb27",
+      "dotted_decimal_identifier": "63626095396913227.18035742492708412.248708546411303",
+      "cache_key": "os-hardening-4.0.0-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/os-hardening/versions/4.0.0/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/os-hardening/versions/4.0.0/download",
+        "version": "4.0.0"
+      }
+    }
+  },
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+
+  },
+  "solution_dependencies": {
+    "Policyfile": [
+      [
+        "base",
+        ">= 0.0.0"
+      ],
+      [
+        "os-hardening",
+        "= 4.0.0"
+      ]
+    ],
+    "dependencies": {
+      "base (0.1.0)": [
+        [
+          "os-hardening",
+          ">= 0.0.0"
+        ]
+      ],
+      "os-hardening (4.0.0)": [
+
+      ]
+    }
+  }
+}
