@@ -78,10 +78,11 @@ execute "enable" do
 end
 # set up the app
 #
-if node[Chef::Config.policy_group]['aar_app']['db_host'].nil?
-  db_host = node['aar_app']['db_host']
-else
+case node[Chef::Config.policy_group] 
+when 'acceptance', 'production'
   db_host = node[Chef::Config.policy_group]['aar_app']['db_host']
+else
+  db_host = node['aar_app']['db_host']
 end
 
 template "/var/www/AAR/AAR_config.py" do
