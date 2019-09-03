@@ -21,3 +21,4 @@ include_policy 'base', policy_name: "base", policy_group: "acceptance", server: 
 
 default['acceptance']['aar_app']['db_host'] = '127.0.0.1'
 default['production']['aar_app']['db_host'] = '172.31.37.51'
+default['aar_app']['db_host'] = '127.0.0.1'

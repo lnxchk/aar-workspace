@@ -76,12 +76,19 @@ execute "enable" do
   command "a2ensite AAR"
   not_if {::File.exists?("/etc/httpd/sites-enabled/AAR.conf")}
 end
-# set up the app 
+# set up the app
+#
+if node[Chef::Config.policy_group]['aar_app']['db_host'].nil?
+  db_host = node['aar_app']['db_host']
+else
+  db_host = node[Chef::Config.policy_group]['aar_app']['db_host']
+end
+
 template "/var/www/AAR/AAR_config.py" do
   source "AAR_config.py.erb"
   notifies :reload, "service[apache2]"
   variables(
-    :host => node[Chef::Config.policy_group]['aar_app']['db_host'],
+    :host => db_host,
     :pw => node['aar_app']['db_pw']
   )
 end
