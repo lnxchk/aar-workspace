@@ -10,7 +10,7 @@ name 'base'
 default_source :supermarket
 
 # run_list: chef-client will run these recipes in the order specified.
-run_list 'os-hardening::default','base::default'
+run_list 'os-hardening::default'
 
 # Specify a custom source for a single cookbook:
-cookbook 'base', path: '.'
+cookbook 'os-hardening', github: 'dev-sec/chef-os-hardening', branch: 'master'
