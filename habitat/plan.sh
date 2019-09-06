@@ -1,7 +1,7 @@
-scaffold_policy_name="aar-host"
-pkg_name="aar-host"
+scaffold_policy_name="aar-host-el"
+pkg_name="aar-host-el"
 pkg_origin="lnxchk"
-pkg_version="0.1.4"
+pkg_version="0.1.5"
 pkg_maintainer="Mandi Walls <mandi@chef.io>"
 pkg_scaffolding="chef/scaffolding-chef-infra"
 pkg_svc_user=("root")
